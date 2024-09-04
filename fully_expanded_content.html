@@ -1,0 +1,2156 @@
+<html class="hasSidebar hasPageActions hasBreadcrumb landing has-default-focus theme-dark" lang="en-us" dir="ltr" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Azure Container Registry documentation">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/azure/container-registry/"><meta property="og:description" content="Learn about Azure's private registry service to host Docker container images and related artifacts. Azure Container Registry service also supports ACR Tasks, a suite of services to build, manage, and patch container images."><meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png">
+
+	<meta property="og:image:alt" content="Microsoft Learn">
+
+	<meta name="twitter:card" content="summary_large_image">
+
+	<meta name="twitter:site" content="@MicrosoftLearn">
+
+	<meta name="color-scheme" content="light dark"><meta name="author" content="tejaswikolli-web">
+<meta name="breadcrumb_path" content="/azure/bread/toc.json">
+<meta name="depot_name" content="Azure.azure-documents">
+<meta name="description" content="Learn about Azure's private registry service to host Docker container images and related artifacts. Azure Container Registry service also supports ACR Tasks, a suite of services to build, manage, and patch container images.">
+<meta name="document_id" content="79c1deb1-3014-c889-c4dc-31901fd94db3">
+<meta name="document_version_independent_id" content="88e9f436-20de-f334-4e72-822d22dfdc46">
+<meta name="feedback_help_link_type" content="get-help-at-qna">
+<meta name="feedback_help_link_url" content="https://learn.microsoft.com/answers/tags/62/azure-container-registry/">
+<meta name="feedback_product_url" content="https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4">
+<meta name="feedback_system" content="Standard">
+<meta name="git_commit_id" content="a19cdbdb87e3cdcefabdb8dda0c7aae078462850">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/azure-docs-pr/blob/a19cdbdb87e3cdcefabdb8dda0c7aae078462850/articles/container-registry/index.yml">
+<meta name="locale" content="en-us">
+<meta name="ms.author" content="tejaswikolli">
+<meta name="ms.date" content="11/08/2019">
+<meta name="ms.service" content="azure-container-registry">
+<meta name="ms.subservice" content="subservice">
+<meta name="ms.suite" content="office">
+<meta name="ms.topic" content="landing-page">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/articles/container-registry/index.yml">
+<meta name="page_type" content="landing">
+<meta name="permissioned-type" content="public">
+<meta name="recommendation_types" content="Training">
+<meta name="recommendation_types" content="Certification">
+<meta name="recommendations" content="true">
+<meta name="schema" content="Landing">
+<meta name="site_name" content="Docs">
+<meta name="summary" content="Azure Container Registry allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments. Use Azure container registries with your existing container development and deployment pipelines. Use Azure Container Registry Tasks to build container images in Azure on-demand, or automate builds triggered by source code updates, updates to a container's base image, or timers.">
+<meta name="toc_rel" content="toc.json">
+<meta name="uhfHeaderId" content="azure">
+<meta name="updated_at" content="2024-08-02 11:27 AM">
+<meta name="persistent_id" content="6e8cc7e0-61ed-77d9-3a01-f1ff1301c01c">
+	
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/cb49e66a-8528-497d-adaa-eade2d009d1b" data-source="generated">
+	
+	<meta name="spProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/472c9d15-157b-443c-afa2-e209c8fecf58" data-source="generated">
+	<meta name="scope" content="Azure"><meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/container-registry/index.yml"><link href="https://learn.microsoft.com/en-us/azure/container-registry/" rel="canonical"><title>Azure Container Registry documentation | Microsoft Learn</title><link rel="stylesheet" href="/static/assets/0.4.028025789/styles/site-ltr.css">
+
+	<script id="msdocs-script">
+	var msDocs = {environment: {
+			supportLevel: 'production',
+			accessLevel: 'online',
+			reviewFeatures: false,
+			systemContent: true,
+			azurePortalHostname: 'portal.azure.com',
+			legacyHosting: false,
+			siteName: 'learn',
+		},data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Landing',
+			brand: 'azure',
+			context: {},
+			hasBinaryRating: false,
+			feedbackHelpLinkType:'get-help-at-qna',
+			feedbackHelpLinkUrl:'https://learn.microsoft.com/answers/tags/62/azure-container-registry/',
+			standardFeedback: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'Standard',
+			feedbackGitHubRepo: 'MicrosoftDocs/azure-docs',
+			feedbackProductUrl: 'https://feedback.azure.com/d365community/forum/79b1327d-d925-ec11-b6e6-000d3a4f06a4',extendBreadcrumb: false,isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: false,
+			hasBookmark: false,
+			hasShare: true,
+			isPermissioned: false,
+			isPrivateUnauthorized: false,hasRecommendations: false,contributors: [{ name: "rayoef", url: "https://github.com/rayoef" },{ name: "zr-msft", url: "https://github.com/zr-msft" },{ name: "dlepow", url: "https://github.com/dlepow" },{ name: "atikmapari", url: "https://github.com/atikmapari" },{ name: "DCtheGeek", url: "https://github.com/DCtheGeek" },{ name: "mtillman", url: "https://github.com/mtillman" },{ name: "mmacy", url: "https://github.com/mmacy" },{ name: "tynevi", url: "https://github.com/tynevi" },{ name: "v-alje", url: "https://github.com/v-alje" },{ name: "neilpeterson", url: "https://github.com/neilpeterson" },{ name: "v-kents", url: "https://github.com/v-kents" },{ name: "v-yogpat", url: "https://github.com/v-yogpat" },{ name: "Ja-Dunn", url: "https://github.com/Ja-Dunn" },{ name: "v-bhmakwnn", url: "https://github.com/v-bhmakwnn" }],},
+		functions:{}
+	};
+	</script><script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+	<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script><script src="/static/assets/0.4.028025789/global/deprecation.js"></script><script src="/static/assets/0.4.028025789/scripts/en-us/index-docs.js"></script><style></style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"name":"Learn","position":1,"@type":"ListItem","item":"https://learn.microsoft.com/en-us/"},{"name":"Azure","position":2,"@type":"ListItem","item":"https://learn.microsoft.com/en-us/azure/"},{"name":"Container Registry","position":3,"@type":"ListItem"}]}</script></head>
+
+<body lang="en-us" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a><div hidden="" id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;" hidden="">
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 " style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">Download Microsoft Edge</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">More info about Internet Explorer and Microsoft Edge</a>
+				</div>
+			</div>
+		</div>
+		<!-- liquid-tag banners global -->
+
+		<!-- site header -->
+		<header id="ms--site-header" data-test-id="site-header-wrapper" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+			<div id="ms--mobile-nav" class="site-header display-none-tablet padding-inline-none gap-none" data-bi-name="mobile-header" data-test-id="mobile-header"><!---->
+		<div id="ms--site-header-hamburger" data-test-id="site-header-hamburger">
+			<button type="button" class="button button-clear inner-focus" data-test-id="mobile-nav-open-button" data-bi-name="mobile-nav-open-button" title="Global navigation" aria-label="Global navigation">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-menu"></span>
+				</span>
+			</button>
+		</div>
+
+		<!-- Brand -->
+		
+		<a class="site-header-brand" itemprop="url" href="/en-us/" data-bi-name="site-header-brand-learn-mobile" data-test-id="site-header-brand-mobile">
+			<span><!---->Learn<!----></span>
+		</a>
+	
+
+		<!-- MS logo -->
+		
+				<a href="https://www.microsoft.com" aria-label="Microsoft" itemprop="url" data-bi-name="site-header-microsoft-logo-mobile" data-test-id="site-header-microsoft-logo-mobile" class="site-header-logo site-header-logo-centered">
+					
+		<svg aria-hidden="true" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" itemprop="logo" itemscope="itemscope">
+			<path d="M11.5216 0.5H0V11.9067H11.5216V0.5Z" fill="#f25022"></path>
+			<path d="M24.2418 0.5H12.7202V11.9067H24.2418V0.5Z" fill="#7fba00"></path>
+			<path d="M11.5216 13.0933H0V24.5H11.5216V13.0933Z" fill="#00a4ef"></path>
+			<path d="M24.2418 13.0933H12.7202V24.5H24.2418V13.0933Z" fill="#ffb900"></path>
+		</svg>
+	
+				</a>
+		  
+
+		<!-- Search -->
+		
+		<search-expander data-test-id="site-header-search-mobile" class="display-flex flex-grow-1 justify-content-flex-end">
+			<div hidden="" id="ms--site-header-search-mobile" class="display-flex align-items-center gap-xxs width-full padding-left-xxs">
+				
+		<form class="flex-grow-1" method="GET" role="search" id="ms--site-header-search-form-mobile" data-bi-name="site-header-search-form-mobile" name="site-header-search-form-mobile" aria-label="Search" action="/en-us/search/">
+			<div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-header-search-autocomplete-input-mobile" data-test-id="site-header-search-autocomplete-input-mobile" class="autocomplete-input input 
+						
+						width-full" type="search" name="terms" aria-expanded="false" aria-owns="ax-1-listbox" aria-controls="ax-1-listbox" aria-activedescendant="" aria-label="Search" aria-describedby="ms--site-header-search-autocomplete-input-mobile-description" placeholder="Search" data-bi-name="site-header-search-autocomplete-input-mobile" pattern=".*">
+
+				
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+
+				<span hidden="" id="ms--site-header-search-autocomplete-input-mobile-description">
+					Suggestions will filter as you type
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-1-listbox" data-test-id="site-header-search-autocomplete-input-mobile-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="Suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			
+			
+		</form>
+	
+				<button data-search-expander-trigger-close="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search-mobile" aria-label="Close search" data-bi-name="site-header-search-close-mobile" data-test-id="site-header-search-close-mobile">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-navigate-close"></span>
+					</span>
+				</button>
+			</div>
+			<button data-search-expander-trigger-open="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search-mobile" aria-label="Open search" data-bi-name="site-header-search-open-mobile" data-test-id="site-header-search-open-mobile">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-search"></span>
+				</span>
+			</button>
+		</search-expander>
+	
+
+		<!-- User avatar/Sign in -->
+		<!---->
+		<a href="#" data-bi-name="site-header-sign-in-mobile" data-test-id="site-header-sign-in-mobile" class="link-button font-size-sm flex-shrink-0 docs-sign-in auth-status-determined not-authenticated margin-right-xs margin-left-xxs">
+			Sign in
+		</a>
+	 
+		<details data-bi-name="site-header-user-mobile" class="popover popover-right auth-status-determined authenticated margin-right-xs margin-left-xxs">
+			<summary data-bi-name="site-header-user-avatar" aria-label="Your Account" data-test-id="site-header-user-mobile">
+				<div class="persona persona-sm">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarThumbnailUrl">
+					</figure>
+				</div>
+			</summary>
+			<div class="popover-content width-auto" data-bi-name="site-header-user-menu">
+				<div class="persona persona-sm">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarUrl" aria-labelledby="ms--user-display-name-mobile">
+					</figure>
+					<div class="persona-details">
+						<p class="persona-name" data-profile-property="displayName" id="ms--user-display-name-mobile"></p>
+						<p data-profile-property="upn"></p>
+					</div>
+				</div>
+				<ul class="padding-block-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" class="font-size-sm" data-bi-name="site-header-user-profile" href="https://learn.microsoft.com/en-us/users/me/activity/">
+							Profile
+						</a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" class="font-size-sm" data-bi-name="site-header-user-settings" href="https://learn.microsoft.com/en-us/users/me/settings/">
+							Settings
+						</a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out font-size-sm" href="#" data-bi-name="site-header-sign-out-mobile" data-test-id="site-header-user-sign-out-mobile">
+						Sign out
+					</a>
+				</div>
+			</div>
+		</details>
+	<!---->
+	<!----></div>
+			<div id="ms--primary-nav" class="site-header display-none display-flex-tablet" data-bi-name="L1-header" data-test-id="primary-header"><!---->
+		<!-- MS logo -->
+		
+				<a href="https://www.microsoft.com" aria-label="Microsoft" itemprop="url" data-bi-name="site-header-microsoft-logo" data-test-id="site-header-microsoft-logo" class="site-header-logo ">
+					
+		<svg aria-hidden="true" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" itemprop="logo" itemscope="itemscope">
+			<path d="M11.5216 0.5H0V11.9067H11.5216V0.5Z" fill="#f25022"></path>
+			<path d="M24.2418 0.5H12.7202V11.9067H24.2418V0.5Z" fill="#7fba00"></path>
+			<path d="M11.5216 13.0933H0V24.5H11.5216V13.0933Z" fill="#00a4ef"></path>
+			<path d="M24.2418 13.0933H12.7202V24.5H24.2418V13.0933Z" fill="#ffb900"></path>
+		</svg>
+	
+				</a>
+		  
+
+		<!-- Divider -->
+		<div class="site-header-divider"></div>
+
+		<!-- Brand -->
+		
+		<a class="site-header-brand" itemprop="url" href="/en-us/" data-bi-name="site-header-brand-learn" data-test-id="site-header-brand">
+			<span><!---->Learn<!----></span>
+		</a>
+	
+
+		<div id="ms--search-expander-wrapper" class="display-flex justify-content-space-between flex-grow-1 align-items-center overflow-x-hidden height-full">
+			<!-- Main Nav -->
+			
+		<overflow-menu class="align-self-stretch" style="display: block; overflow: hidden; width: 100%;">
+			<nav class="site-header-nav" data-bi-name="primary-nav" data-overflow-menu-container="" aria-label="Global" style="visibility: visible; overflow: hidden;">
+				<button type="button" data-overflow-menu-prev-button="" data-bi-name="site-header-btn-prev" class="button button-clear button-sm inner-focus" hidden="" aria-label="Previous">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-chevron-left-light"></span>
+					</span>
+				</button>
+
+				
+		<ul class="display-flex gap-xxs-desktop">
+			<!---->
+			<li aria-setsize="4" aria-posinset="1">
+				<panel-controller data-bi-name="site-header-btn-1-discover">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-1" data-test-id="site-header-panel-controller-1" style="white-space: nowrap;">
+						<span><!---->Discover<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-1" data-bi-name="panel-1-discover" data-test-id="site-header-panel-1">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-cards">
+				<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-1-documentation">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/docs/">
+								Documentation
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->In-depth articles on Microsoft developer tools and technologies<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-2-training">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/training/">
+								Training
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Personalized learning paths and courses<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-3-credentials">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/credentials/">
+								Credentials
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Globally recognized, industry-endorsed credentials<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-4-qna">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/answers/">
+								Q&amp;A
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Technical questions and answers moderated by Microsoft<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-5-code-samples">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/samples/">
+								Code Samples
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Code sample library for Microsoft developer tools and technologies<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-6-assessments">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/assessments/">
+								Assessments
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Interactive, curated guidance and recommendations<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+				<li>
+					<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="panel-card-7-shows">
+						<div class="card-content">
+							<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/shows/">
+								Shows
+							</a>
+							<p class="card-content-description line-clamp-2"><!---->Thousands of hours of original programming from Microsoft experts<!----></p>
+						</div>
+					</article>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle"><!---->Microsoft Learn for Organizations<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/training/organizations/">
+							Boost your team's technical skills
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Access curated resources to upskill your team and close skills gaps.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="2">
+				<panel-controller data-bi-name="site-header-btn-2-product-documentation">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-2" data-test-id="site-header-panel-controller-2" style="white-space: nowrap;">
+						<span><!---->Product documentation<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-2" data-bi-name="panel-2-product-documentation" data-test-id="site-header-panel-2">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/aspnet/" data-bi-name="panel-link-1-asp-dotnet">
+						ASP.NET
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/azure/" data-bi-name="panel-link-2-azure">
+						Azure
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/dynamics365/" data-bi-name="panel-link-3-dynamics365">
+						Dynamics 365
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/microsoft-365/" data-bi-name="panel-link-4-microsoft-365">
+						Microsoft 365
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/microsoft-edge/" data-bi-name="panel-link-5-microsoft-edge">
+						Microsoft Edge
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/entra/" data-bi-name="panel-link-6-microsoft-entra">
+						Microsoft Entra
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/graph/" data-bi-name="panel-link-7-microsoft-graph">
+						Microsoft Graph
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/mem/" data-bi-name="panel-link-8-microsoft-intune">
+						Microsoft Intune
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/purview/" data-bi-name="panel-link-9-microsoft-purview">
+						Microsoft Purview
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/microsoftteams/" data-bi-name="panel-link-10-microsoft-teams">
+						Microsoft Teams
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/dotnet/" data-bi-name="panel-link-11-dotnet">
+						.NET
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/power-apps/" data-bi-name="panel-link-12-power-apps">
+						Power Apps
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/power-automate/" data-bi-name="panel-link-13-power-automate">
+						Power Automate
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/power-bi/" data-bi-name="panel-link-14-power-bi">
+						Power BI
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/power-platform/" data-bi-name="panel-link-15-power-platform">
+						Power Platform
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/powershell/" data-bi-name="panel-link-16-powershell">
+						PowerShell
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/sql/" data-bi-name="panel-link-17-sql">
+						SQL
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/sysinternals/" data-bi-name="panel-link-18-sysinternals">
+						Sysinternals
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/visualstudio/" data-bi-name="panel-link-19-visual-studio">
+						Visual Studio
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/windows/" data-bi-name="panel-link-20-windows">
+						Windows
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/windows-server/" data-bi-name="panel-link-21-windows-server">
+						Windows Server
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+			<a class="button button-clear button-sm color-hyperlink justify-content-flex-start border-none background-color-transparent margin-top-sm" href="/en-us/docs/" data-bi-name="panel-cta-view-all-products">
+				View all products
+			</a>
+		
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle"><!---->Microsoft Learn for Organizations<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/training/organizations/">
+							Boost your team's technical skills
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Access curated resources to upskill your team and close skills gaps.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="3">
+				<panel-controller data-bi-name="site-header-btn-3-dev-languages">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-3" data-test-id="site-header-panel-controller-3" style="white-space: nowrap;">
+						<span><!---->Development languages<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-3" data-bi-name="panel-3-dev-languages" data-test-id="site-header-panel-3">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/cpp/" data-bi-name="panel-link-1-cpp">
+						C++
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/dotnet/csharp/" data-bi-name="panel-link-2-csharp">
+						C#
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/dax/" data-bi-name="panel-link-3-dax">
+						DAX
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/java/" data-bi-name="panel-link-4-java">
+						Java
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/odata/" data-bi-name="panel-link-5-odata">
+						OData
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/openapi/" data-bi-name="panel-link-6-open-api">
+						OpenAPI
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/powerquery-m/" data-bi-name="panel-link-7-power-query-m">
+						Power Query M
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/office/vba/" data-bi-name="panel-link-8-vba">
+						VBA
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle"><!---->Microsoft Learn for Organizations<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/training/organizations/">
+							Boost your team's technical skills
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Access curated resources to upskill your team and close skills gaps.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+			<li aria-setsize="4" aria-posinset="4">
+				<panel-controller data-bi-name="site-header-btn-4-topics">
+					<button type="button" aria-expanded="false" class="site-header-button" data-overflow-menu-item="" aria-controls="ms--panel-4" data-test-id="site-header-panel-controller-4" style="white-space: nowrap;">
+						<span><!---->Topics<!----></span>
+						<span class="icon expanded-indicator" aria-hidden="true">
+							<span class="docon docon-chevron-down-light"></span>
+						</span>
+					</button>
+					<div class="site-header-panel" hidden="" id="ms--panel-4" data-bi-name="panel-4-topics" data-test-id="site-header-panel-4">
+						
+		<div class="site-header-panel-content">
+			<ul class="site-header-panel-links">
+				<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/ai/" data-bi-name="panel-link-1-ai">
+						Artificial intelligence
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/compliance/" data-bi-name="panel-link-2-compliance">
+						Compliance
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/devops/" data-bi-name="panel-link-3-devops">
+						DevOps
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/platform-engineering/" data-bi-name="panel-link-4-platform-engineering">
+						Platform engineering
+					</a>
+				</li>
+			<!---->
+				<li>
+					<a class="button button-clear button-sm button-block font-weight-normal justify-content-flex-start inner-focus border-none background-color-body-accent-onhover" href="/en-us/security/" data-bi-name="panel-link-5-security">
+						Security
+					</a>
+				</li>
+			<!---->
+			</ul>
+			
+		</div>
+		
+			<section class="site-header-panel-featured-content"><!----><!---->
+				<article class="card position-relative background-color-body-accent-onhover background-color-body-medium box-shadow-none" data-bi-name="featured-card-1-microsoft-learn-for-organizations">
+					<div class="card-content">
+						<p class="card-supertitle"><!---->Microsoft Learn for Organizations<!----></p>
+						<a class="card-title color-text background-color-transparent stretched-link" href="/en-us/training/organizations/">
+							Boost your team's technical skills
+						</a>
+						<p class="card-content-description line-clamp-2"><!---->Access curated resources to upskill your team and close skills gaps.<!----></p>
+					</div>
+				</article>
+			<!----><!----></section>
+		
+	
+					</div>
+				</panel-controller>
+			</li>
+		<!---->
+		</ul>
+	
+
+				<button type="button" data-overflow-menu-next-button="" data-bi-name="site-header-btn-next" class="button button-clear button-sm inner-focus margin-left-auto" hidden="" aria-label="Next">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-chevron-right-light"></span>
+					</span>
+				</button>
+			</nav>
+		</overflow-menu>
+	
+
+			<!-- Search -->
+			
+		<search-expander data-test-id="site-header-search" class="flex-grow-1 margin-left-xxs">
+			<div hidden="" id="ms--site-header-search" class="display-flex align-items-center gap-xxs ">
+				
+		<form class="flex-grow-1" method="GET" role="search" id="ms--site-header-search-form" data-bi-name="site-header-search-form" name="site-header-search-form" aria-label="Search" action="/en-us/search/">
+			<div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-header-search-autocomplete-input" data-test-id="site-header-search-autocomplete-input" class="autocomplete-input input input-sm
+						
+						width-full" type="search" name="terms" aria-expanded="false" aria-owns="ax-0-listbox" aria-controls="ax-0-listbox" aria-activedescendant="" aria-label="Search" aria-describedby="ms--site-header-search-autocomplete-input-description" placeholder="Search" data-bi-name="site-header-search-autocomplete-input" pattern=".*">
+
+				
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+
+				<span hidden="" id="ms--site-header-search-autocomplete-input-description">
+					Suggestions will filter as you type
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-0-listbox" data-test-id="site-header-search-autocomplete-input-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="Suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			
+			
+		</form>
+	
+				<button data-search-expander-trigger-close="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search" aria-label="Close search" data-bi-name="site-header-search-close" data-test-id="site-header-search-close">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-navigate-close"></span>
+					</span>
+				</button>
+			</div>
+			<button data-search-expander-trigger-open="" type="button" class="button button-clear inner-focus" aria-controls="ms--site-header-search" aria-label="Open search" data-bi-name="site-header-search-open" data-test-id="site-header-search-open">
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-search"></span>
+				</span>
+			</button>
+		</search-expander>
+	
+		</div>
+
+		<!-- User avatar/Sign in -->
+		<!---->
+		<a href="#" data-bi-name="site-header-sign-in" data-test-id="site-header-sign-in" class="link-button font-size-sm flex-shrink-0 docs-sign-in auth-status-determined not-authenticated ">
+			Sign in
+		</a>
+	 
+		<details data-bi-name="site-header-user" class="popover popover-right auth-status-determined authenticated ">
+			<summary data-bi-name="site-header-user-avatar" aria-label="Your Account" data-test-id="site-header-user">
+				<div class="persona ">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarThumbnailUrl">
+					</figure>
+				</div>
+			</summary>
+			<div class="popover-content width-auto" data-bi-name="site-header-user-menu">
+				<div class="persona ">
+					<figure class="persona-avatar">
+						<img alt="" data-profile-property="avatarUrl" aria-labelledby="ms--user-display-name">
+					</figure>
+					<div class="persona-details">
+						<p class="persona-name" data-profile-property="displayName" id="ms--user-display-name"></p>
+						<p data-profile-property="upn"></p>
+					</div>
+				</div>
+				<ul class="padding-block-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" class="font-size-sm" data-bi-name="site-header-user-profile" href="https://learn.microsoft.com/en-us/users/me/activity/">
+							Profile
+						</a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" class="font-size-sm" data-bi-name="site-header-user-settings" href="https://learn.microsoft.com/en-us/users/me/settings/">
+							Settings
+						</a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out font-size-sm" href="#" data-bi-name="site-header-sign-out" data-test-id="site-header-user-sign-out">
+						Sign out
+					</a>
+				</div>
+			</div>
+		</details>
+	<!---->
+	<!----></div>
+			<div id="ms--secondary-nav" class="display-none display-flex-tablet" data-bi-name="L2-header" data-test-id="secondary-header"><!----><div class="site-header width-full"><!----> 
+		<a class="site-header-brand font-size-h6 padding-inline-none margin-right-xxs" itemprop="url" href="/en-us/azure/" data-bi-name="secondary-nav-link-category-azure">
+			<span>
+				Azure
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="site-header-nav width-auto" data-bi-name="secondary-nav" aria-label="Site">
+			<ul class="display-flex">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-120" data-bi-name="secondary-nav-btn-1-products" value="undefined">
+				<span><!---->Products<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-120" aria-label="Products" data-bi-name="secondary-nav-menu-1-products">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-121" data-bi-name="secondary-nav-btn-1-popular-products" value="undefined">
+				<span><!---->Popular products<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-121" aria-label="Popular products" data-bi-name="secondary-nav-menu-1-popular-products">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/ai-services/" data-bi-name="secondary-nav-link-1-azure-ai-services">
+						<span><!---->Azure AI Services<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/app-service/" data-bi-name="secondary-nav-link-2-azure-app-service">
+						<span><!---->Azure App Service<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/databricks/" data-bi-name="secondary-nav-link-3-azure-databricks">
+						<span><!---->Azure Databricks<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/devops/" data-bi-name="secondary-nav-link-4-azure-devops">
+						<span><!---->Azure DevOps<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/azure-functions/" data-bi-name="secondary-nav-link-5-azure-functions">
+						<span><!---->Azure Functions<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/azure-monitor/" data-bi-name="secondary-nav-link-6-azure-monitor">
+						<span><!---->Azure Monitor<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/virtual-machines/" data-bi-name="secondary-nav-link-7-azure-virtual-machines">
+						<span><!---->Azure Virtual Machines<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-122" data-bi-name="secondary-nav-btn-2-popular-categories" value="undefined">
+				<span><!---->Popular categories<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-122" aria-label="Popular categories" data-bi-name="secondary-nav-menu-2-popular-categories">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=compute" data-bi-name="secondary-nav-link-1-compute">
+						<span><!---->Compute<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=networking" data-bi-name="secondary-nav-link-2-networking">
+						<span><!---->Networking<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=storage" data-bi-name="secondary-nav-link-3-storage">
+						<span><!---->Storage<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=ai-machine-learning" data-bi-name="secondary-nav-link-4-ai-and-machine-learning">
+						<span><!---->AI &amp; machine learning<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=analytics" data-bi-name="secondary-nav-link-5-analytics">
+						<span><!---->Analytics<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=databases" data-bi-name="secondary-nav-link-6-databases">
+						<span><!---->Databases<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=security" data-bi-name="secondary-nav-link-7-security">
+						<span><!---->Security<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/" data-bi-name="secondary-nav-link-3-view-all-products">
+						<span><!---->View all products<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-123" data-bi-name="secondary-nav-btn-2-architecture" value="undefined">
+				<span><!---->Architecture<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-123" aria-label="Architecture" data-bi-name="secondary-nav-menu-2-architecture">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/cloud-adoption-framework/" data-bi-name="secondary-nav-link-1-cloud-adoption-framework">
+						<span><!---->Cloud Adoption Framework<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/well-architected/" data-bi-name="secondary-nav-link-2-well-architected-framework">
+						<span><!---->Well-Architected Framework<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/architecture/" data-bi-name="secondary-nav-link-3-azure-architecture-center">
+						<span><!---->Azure Architecture Center<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-124" data-bi-name="secondary-nav-btn-3-develop" value="undefined">
+				<span><!---->Develop<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-124" aria-label="Develop" data-bi-name="secondary-nav-menu-3-develop">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/python/" data-bi-name="secondary-nav-link-1-python">
+						<span><!---->Python<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/dotnet/azure/" data-bi-name="secondary-nav-link-2-dotnet">
+						<span><!---->.NET<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/javascript/" data-bi-name="secondary-nav-link-3-javascript">
+						<span><!---->JavaScript<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/java/" data-bi-name="secondary-nav-link-4-java">
+						<span><!---->Java<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/powershell/azure/" data-bi-name="secondary-nav-link-5-powershell">
+						<span><!---->PowerShell<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/cli/azure/" data-bi-name="secondary-nav-link-6-azure-cli">
+						<span><!---->Azure CLI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/" data-bi-name="secondary-nav-link-7-view-all-developer-resources">
+						<span><!---->View all developer resources<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-125" data-bi-name="secondary-nav-btn-4-learn-azure" value="undefined">
+				<span><!---->Learn Azure<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-125" aria-label="Learn Azure" data-bi-name="secondary-nav-menu-4-learn-azure">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/assessments/1c032171-8ca0-4032-8962-a38a5cc424a8/" data-bi-name="secondary-nav-link-1-start-your-ai-learning-assessment">
+						<span><!---->Start your AI learning assessment<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-126" data-bi-name="secondary-nav-btn-2-top-learning-paths" value="undefined">
+				<span><!---->Top learning paths<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-126" aria-label="Top learning paths" data-bi-name="secondary-nav-menu-2-top-learning-paths">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/" data-bi-name="secondary-nav-link-1-cloud-concepts">
+						<span><!---->Cloud concepts<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/" data-bi-name="secondary-nav-link-2-ai-fundamentals">
+						<span><!---->AI fundamentals<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/introduction-generative-ai/" data-bi-name="secondary-nav-link-3-intro-to-generative-ai">
+						<span><!---->Intro to generative AI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/azure-fundamentals-describe-azure-architecture-services/" data-bi-name="secondary-nav-link-4-azure-architecture-fundamentals">
+						<span><!---->Azure Architecture fundamentals<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/credentials/browse/?products=azure" data-bi-name="secondary-nav-link-3-earn-credentials">
+						<span><!---->Earn credentials<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/browse/?products=azure&amp;resource_type=course" data-bi-name="secondary-nav-link-4-instructor-led-courses">
+						<span><!---->Instructor-led courses<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/azure/" data-bi-name="secondary-nav-link-5-view-all-training">
+						<span><!---->View all training<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a data-test-id="header-link-troubleshooting" class="has-external-link-indicator site-header-button " href="/en-us/troubleshoot/azure/" data-bi-name="secondary-nav-link-5-troubleshooting">
+						<span><!---->Troubleshooting<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-127" data-bi-name="secondary-nav-btn-6-resources" value="undefined">
+				<span><!---->Resources<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-127" aria-label="Resources" data-bi-name="secondary-nav-menu-6-resources">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/get-started" data-bi-name="secondary-nav-link-1-product-overview">
+						<span><!---->Product overview<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/blog/" data-bi-name="secondary-nav-link-2-latest-blog-posts">
+						<span><!---->Latest blog posts<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/pricing/" data-bi-name="secondary-nav-link-3-pricing-information">
+						<span><!---->Pricing information<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/support/options/" data-bi-name="secondary-nav-link-4-support-options">
+						<span><!---->Support options<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  site-header-button-icon-chevron" aria-controls="bx-128" data-bi-name="secondary-nav-btn-more" value="undefined">
+				<span><!---->More<!----></span>
+				<span aria-hidden="true" class="icon expanded-indicator ">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-128" aria-label="More" data-bi-name="secondary-nav-menu-more">
+				<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-129" data-bi-name="secondary-nav-btn-1-products" value="undefined">
+				<span><!---->Products<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-129" aria-label="Products" data-bi-name="secondary-nav-menu-1-products">
+				<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-130" data-bi-name="secondary-nav-btn-1-popular-products" value="undefined">
+				<span><!---->Popular products<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-130" aria-label="Popular products" data-bi-name="secondary-nav-menu-1-popular-products">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/ai-services/" data-bi-name="secondary-nav-link-1-azure-ai-services">
+						<span><!---->Azure AI Services<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/app-service/" data-bi-name="secondary-nav-link-2-azure-app-service">
+						<span><!---->Azure App Service<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/databricks/" data-bi-name="secondary-nav-link-3-azure-databricks">
+						<span><!---->Azure Databricks<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/devops/" data-bi-name="secondary-nav-link-4-azure-devops">
+						<span><!---->Azure DevOps<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/azure-functions/" data-bi-name="secondary-nav-link-5-azure-functions">
+						<span><!---->Azure Functions<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/azure-monitor/" data-bi-name="secondary-nav-link-6-azure-monitor">
+						<span><!---->Azure Monitor<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/virtual-machines/" data-bi-name="secondary-nav-link-7-azure-virtual-machines">
+						<span><!---->Azure Virtual Machines<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-131" data-bi-name="secondary-nav-btn-2-popular-categories" value="undefined">
+				<span><!---->Popular categories<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-131" aria-label="Popular categories" data-bi-name="secondary-nav-menu-2-popular-categories">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=compute" data-bi-name="secondary-nav-link-1-compute">
+						<span><!---->Compute<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=networking" data-bi-name="secondary-nav-link-2-networking">
+						<span><!---->Networking<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=storage" data-bi-name="secondary-nav-link-3-storage">
+						<span><!---->Storage<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=ai-machine-learning" data-bi-name="secondary-nav-link-4-ai-and-machine-learning">
+						<span><!---->AI &amp; machine learning<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=analytics" data-bi-name="secondary-nav-link-5-analytics">
+						<span><!---->Analytics<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=databases" data-bi-name="secondary-nav-link-6-databases">
+						<span><!---->Databases<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/?product=security" data-bi-name="secondary-nav-link-7-security">
+						<span><!---->Security<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/" data-bi-name="secondary-nav-link-3-view-all-products">
+						<span><!---->View all products<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-132" data-bi-name="secondary-nav-btn-2-architecture" value="undefined">
+				<span><!---->Architecture<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-132" aria-label="Architecture" data-bi-name="secondary-nav-menu-2-architecture">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/cloud-adoption-framework/" data-bi-name="secondary-nav-link-1-cloud-adoption-framework">
+						<span><!---->Cloud Adoption Framework<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/well-architected/" data-bi-name="secondary-nav-link-2-well-architected-framework">
+						<span><!---->Well-Architected Framework<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/architecture/" data-bi-name="secondary-nav-link-3-azure-architecture-center">
+						<span><!---->Azure Architecture Center<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-133" data-bi-name="secondary-nav-btn-3-develop" value="undefined">
+				<span><!---->Develop<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-133" aria-label="Develop" data-bi-name="secondary-nav-menu-3-develop">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/python/" data-bi-name="secondary-nav-link-1-python">
+						<span><!---->Python<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/dotnet/azure/" data-bi-name="secondary-nav-link-2-dotnet">
+						<span><!---->.NET<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/javascript/" data-bi-name="secondary-nav-link-3-javascript">
+						<span><!---->JavaScript<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/java/" data-bi-name="secondary-nav-link-4-java">
+						<span><!---->Java<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/powershell/azure/" data-bi-name="secondary-nav-link-5-powershell">
+						<span><!---->PowerShell<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/cli/azure/" data-bi-name="secondary-nav-link-6-azure-cli">
+						<span><!---->Azure CLI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/azure/developer/" data-bi-name="secondary-nav-link-7-view-all-developer-resources">
+						<span><!---->View all developer resources<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-134" data-bi-name="secondary-nav-btn-4-learn-azure" value="undefined">
+				<span><!---->Learn Azure<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-134" aria-label="Learn Azure" data-bi-name="secondary-nav-menu-4-learn-azure">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/assessments/1c032171-8ca0-4032-8962-a38a5cc424a8/" data-bi-name="secondary-nav-link-1-start-your-ai-learning-assessment">
+						<span><!---->Start your AI learning assessment<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-135" data-bi-name="secondary-nav-btn-2-top-learning-paths" value="undefined">
+				<span><!---->Top learning paths<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-135" aria-label="Top learning paths" data-bi-name="secondary-nav-menu-2-top-learning-paths">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/" data-bi-name="secondary-nav-link-1-cloud-concepts">
+						<span><!---->Cloud concepts<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/" data-bi-name="secondary-nav-link-2-ai-fundamentals">
+						<span><!---->AI fundamentals<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/introduction-generative-ai/" data-bi-name="secondary-nav-link-3-intro-to-generative-ai">
+						<span><!---->Intro to generative AI<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/paths/azure-fundamentals-describe-azure-architecture-services/" data-bi-name="secondary-nav-link-4-azure-architecture-fundamentals">
+						<span><!---->Azure Architecture fundamentals<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/credentials/browse/?products=azure" data-bi-name="secondary-nav-link-3-earn-credentials">
+						<span><!---->Earn credentials<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/browse/?products=azure&amp;resource_type=course" data-bi-name="secondary-nav-link-4-instructor-led-courses">
+						<span><!---->Instructor-led courses<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/training/azure/" data-bi-name="secondary-nav-link-5-view-all-training">
+						<span><!---->View all training<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+				<li hidden="">
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="/en-us/troubleshoot/azure/" data-bi-name="secondary-nav-link-5-troubleshooting">
+						<span><!---->Troubleshooting<!----></span>
+					</a>
+				</li>
+		  <!---->
+		<li class="dropdown" hidden="">
+			<button type="button" aria-expanded="false" class="dropdown-trigger site-header-button  width-full justify-content-space-between padding-inline-xs padding-block-xxs" aria-controls="bx-136" data-bi-name="secondary-nav-btn-6-resources" value="undefined">
+				<span><!---->Resources<!----></span>
+				<span aria-hidden="true" class="icon  margin-left-xs">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</button>
+			<ul class="dropdown-menu padding-bottom-xxs background-color-body-medium" id="bx-136" aria-label="Resources" data-bi-name="secondary-nav-menu-6-resources">
+				<!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/get-started" data-bi-name="secondary-nav-link-1-product-overview">
+						<span><!---->Product overview<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/blog/" data-bi-name="secondary-nav-link-2-latest-blog-posts">
+						<span><!---->Latest blog posts<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/pricing/" data-bi-name="secondary-nav-link-3-pricing-information">
+						<span><!---->Pricing information<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li>
+					<a class="has-external-link-indicator site-header-button width-full justify-content-flex-start padding-inline-xs padding-block-xxs " href="https://azure.microsoft.com/support/options/" data-bi-name="secondary-nav-link-4-support-options">
+						<span><!---->Support options<!----></span>
+					</a>
+				</li>
+		  <!---->
+			</ul>
+		</li>
+	<!---->
+			</ul>
+		</li>
+	<!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		 <div class="buttons"><!---->
+		<a data-test-id="navbar-primary-cta" class="button button-sm button-primary " href="https://portal.azure.com" data-bi-name="secondary-nav-cta-secondary-portal">
+			Portal
+		</a>
+	 
+		<a data-test-id="navbar-primary-cta" class="button button-sm button-primary button-filled margin-right-none" href="https://azure.microsoft.com/free/" data-bi-name="secondary-nav-cta-primary-free-account">
+			Free account
+		</a>
+	<!----></div>  
+	 <!----></div><!----></div>
+		</header><div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button="">
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">Table of contents</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div><div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container  has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile "><div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-sticky display-flex flex-direction-column" aria-label="Primary" data-bi-name="left toc" role="navigation" style="top: 24px; height: calc(-49px + 100vh); max-height: 1799.91px;"><form action="javascript:" role="search" aria-label="Search" class="margin-bottom-xxs"><label class="visually-hidden" for="ax-2">Search</label><div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-2" data-test-id="ax-2" class="autocomplete-input input input-sm
+						control has-icons-left
+						width-full" type="text" aria-expanded="false" aria-owns="ax-3-listbox" aria-controls="ax-3-listbox" aria-activedescendant="" aria-describedby="ms--ax-2-description" placeholder="Filter by title" pattern=".*">
+
+				
+					<span aria-hidden="true" class="icon is-small is-left">
+						<span class="has-text-primary docon docon-filter-settings"></span>
+					</span>
+			  
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+
+				<span hidden="" id="ms--ax-2-description">
+					Suggestions will filter as you type
+				</span>
+			</div>
+
+			<ul role="listbox" id="ax-3-listbox" data-test-id="ax-2-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xxs " aria-label="Suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div></form><ul class="tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1" role="tree" aria-label="Table of contents" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="7" aria-level="1" aria-posinset="1" role="treeitem" tabindex="0" class="tree-item is-leaf has-external-link-indicator is-selected" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/" aria-current="page">Azure Container Registry documentation</a></li><li class="tree-item is-expanded" aria-setsize="7" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Container registries</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" id="title-2-1_1-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Overview</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro">About Container Registry</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_2-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Quickstarts</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-azure-cli">Create container registry - CLI</a></li><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal">Create container registry - Portal</a></li><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-powershell">Create container registry - PowerShell</a></li><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-geo-replication-template">Create container registry - ARM template</a></li><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-bicep">Create container registry - Bicep</a></li><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-event-grid-quickstart">Send events to Event Grid - CLI</a></li><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/quickstart-client-libraries">Manage content with client libraries</a></li><li role="none"><a aria-setsize="8" aria-level="3" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-java-quickstart">Build and push Java images - CLI</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" id="title-2-1_3-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tutorials</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="2" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" id="title-2-1_3-2_1-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Geo-replicate a registry</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-prepare-registry">1 - Prepare container registry</a></li><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-deploy-app">2 - Deploy web application</a></li><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-deploy-update">3 - Update web application</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="2" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_3-2_2-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Encrypt a registry with customer managed key</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="4" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/tutorial-customer-managed-keys">Customer managed keys - Overview</a></li><li role="none"><a aria-setsize="4" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/tutorial-enable-customer-managed-keys">Enable Customer managed key on your registry</a></li><li role="none"><a aria-setsize="4" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/tutorial-rotate-revoke-customer-managed-keys">Rotate or revoke a Customer managed key</a></li><li role="none"><a aria-setsize="4" aria-level="4" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/tutorial-troubleshoot-customer-managed-keys">Troubleshoot</a></li></ul></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" id="title-2-1_4-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Samples</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/resource-graph-samples">Azure Resource Graph queries</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" id="title-2-1_5-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Concepts</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="13" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" id="title-2-1_5-2_1-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Security</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/security-controls-policy">Security controls by Azure Policy</a></li><li role="none"><a aria-setsize="2" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/security/benchmark/azure/baselines/container-registry-security-baseline?toc=/azure/container-registry/TOC.json">Security baseline</a></li></ul></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus">Container registry tiers and limits</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-concepts">Registries, repositories, and images</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-storage">Image storage</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-formats">Content formats</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-tag-version">Tag and version images</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-artifact-streaming">Artifact streaming</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-artifact-cache">Artifact cache</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-geo-replication">Geo-replication</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/zone-redundancy">Zone redundancy</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-best-practices">Registry best practices</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/push-multi-architecture-images">Multi-arch images</a></li><li role="none"><a aria-setsize="13" aria-level="3" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/buffer-gate-public-content">Manage public images</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" id="title-2-1_6-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>How-to guides</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="4" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" id="title-2-1_6-2_1-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Registry operations</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="9" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli">Push and pull an image</a></li><li role="none"><a aria-setsize="9" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-helm-repos">Push and pull a Helm chart</a></li><li role="none"><a aria-setsize="9" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-manage-artifact">Manage artifacts with ORAS</a></li><li role="none"><a aria-setsize="9" aria-level="4" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repositories">View repositories</a></li><li role="none"><a aria-setsize="9" aria-level="4" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-import-images">Import container images</a></li><li class="tree-item is-expanded" aria-setsize="9" aria-level="4" aria-posinset="6" role="treeitem" tabindex="-1" id="title-2-1_6-2_1-3_6-4" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Transfer artifacts (preview)</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-transfer-prerequisites">Overview and prerequisites</a></li><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-transfer-cli">ACR Transfer with Az CLI</a></li><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-transfer-images">ACR Transfer with ARM templates</a></li><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-transfer-troubleshooting">Troubleshooting</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="9" aria-level="4" aria-posinset="7" role="treeitem" tabindex="-1" id="title-2-1_6-2_1-3_7-4" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Protect registry data</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="5" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-image-lock">Lock container images</a></li><li role="none"><a aria-setsize="2" aria-level="5" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/data-loss-prevention">Disable export</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="9" aria-level="4" aria-posinset="8" role="treeitem" tabindex="-1" id="title-2-1_6-2_1-3_8-4" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Delete container images</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-delete">Delete image data - CLI</a></li><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-soft-delete-policy">Soft delete policy</a></li><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-retention-policy">Retention policy for untagged manifests (preview)</a></li><li role="none"><a aria-setsize="4" aria-level="5" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-auto-purge">Automatically purge tags and manifests (preview)</a></li></ul></li><li role="none"><a aria-setsize="9" aria-level="4" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-webhook">Use ACR webhooks</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="4" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1_6-2_2-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Security and authentication</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-private-link">Restrict access using private endpoint</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-access-selected-networks">Configure public registry access</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-dedicated-data-endpoints">Mitigate data exfiltration with dedicated data endpoints</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-vnet">Restrict access using service endpoint (preview)</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/allow-access-trusted-services">Allow access by trusted services</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-firewall-access-rules">Access behind a firewall</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-configure-conditional-access">Configure conditional access to your Azure Container Registry.</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-disable-authentication-as-arm">Disable authentication as ARM template</a></li><li class="tree-item is-expanded" aria-setsize="13" aria-level="4" aria-posinset="9" role="treeitem" tabindex="-1" id="title-2-1_6-2_2-3_9-4" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Authentication</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="7" aria-level="5" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication">Authentication overview</a></li><li role="none"><a aria-setsize="7" aria-level="5" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-auth-service-principal">Authenticate with service principal</a></li><li role="none"><a aria-setsize="7" aria-level="5" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity">Authenticate with managed identity</a></li><li role="none"><a aria-setsize="7" aria-level="5" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-repository-scoped-permissions">Authenticate with token</a></li><li role="none"><a aria-setsize="7" aria-level="5" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-auth-aci">Authenticate from Azure Container Instances</a></li><li class="tree-item is-expanded" aria-setsize="7" aria-level="5" aria-posinset="6" role="treeitem" tabindex="-1" id="title-2-1_6-2_2-3_9-4_6-5" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Authenticate from Kubernetes</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="4" aria-level="6" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/authenticate-kubernetes-options">Kubernetes scenarios</a></li><li role="none"><a aria-setsize="4" aria-level="6" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?toc=/azure/container-registry/toc.json&amp;bc=/azure/container-registry/breadcrumb/toc.json">Attach registry to Azure Kubernetes Service (AKS)</a></li><li role="none"><a aria-setsize="4" aria-level="6" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/authenticate-aks-cross-tenant">Cross-tenant authentication from AKS</a></li><li role="none"><a aria-setsize="4" aria-level="6" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-auth-kubernetes">Authenticate using Kubernetes pull secret</a></li></ul></li><li role="none"><a aria-setsize="7" aria-level="5" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/anonymous-pull-access">Enable unauthenticated pull access</a></li></ul></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-roles">Azure role-based access control</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-content-trust">Content trust</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-sign-build-push">Sign container images with Notation and AKV using a self-signed certificate</a></li><li role="none"><a aria-setsize="13" aria-level="4" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-sign-trusted-ca">Sign container images with Notation and AKV using a CA issued certificate</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="4" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" id="title-2-1_6-2_3-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Registries and other Azure services</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-app">Azure Container Instances</a></li><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app">Azure Kubernetes Service (AKS)</a></li><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/service-fabric/service-fabric-tutorial-create-container-images">Service Fabric</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="4" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" id="title-2-1_6-2_4-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Monitor</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/monitor-container-registry">Monitor Container Registry</a></li><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-azure-policy">Audit compliance using Azure Policy</a></li><li class="tree-item is-expanded" aria-setsize="3" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" id="title-2-1_6-2_4-3_3-4" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Scan container images</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="5" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/scan-images-defender">Scan with Microsoft Defender for Cloud</a></li></ul></li></ul></li></ul></li></ul></li><li class="tree-item is-expanded" aria-setsize="7" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tasks</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" id="title-3-1_1-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Overview</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview">About ACR Tasks</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" id="title-3-1_2-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Quickstarts</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-quickstart-task-cli">Build, push, and run image - CLI</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1_3-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tutorials</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" id="title-3-1_3-2_1-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Automate container image builds</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="6" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-quick-task">1 - Build from source context</a></li><li role="none"><a aria-setsize="6" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-build-task">2a - Build on code commit</a></li><li role="none"><a aria-setsize="6" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-multistep-task">2b - Multi-step task on code commit</a></li><li role="none"><a aria-setsize="6" aria-level="4" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update">3a - Build on base image update</a></li><li role="none"><a aria-setsize="6" aria-level="4" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-private-base-image-update">3b - Build on private base image update</a></li><li role="none"><a aria-setsize="6" aria-level="4" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-scheduled">4 - Build on a schedule</a></li></ul></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" id="title-3-1_4-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Samples</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-samples">YAML and Dockerfiles</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" id="title-3-1_5-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Concepts</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-multi-step">Multi-step tasks</a></li><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-base-images">Base image updates</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="6" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" id="title-3-1_6-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>How-to guides</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="7" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" id="title-3-1_6-2_1-3" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Access secured resources with managed identities</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-authentication-managed-identity">Enable managed identity on a task</a></li><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-cross-registry-authentication">Cross-registry authentication</a></li><li role="none"><a aria-setsize="3" aria-level="4" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-authentication-key-vault">External authentication using key vault</a></li></ul></li><li role="none"><a aria-setsize="7" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-task-run-template">Quick task run with Resource Manager template</a></li><li role="none"><a aria-setsize="7" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/tasks-agent-pools">Run task on dedicated agent pool (preview)</a></li><li role="none"><a aria-setsize="7" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/tasks-consume-public-content">Consume and maintain public content</a></li><li role="none"><a aria-setsize="7" aria-level="3" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-pack-build">Build image with Buildpacks (preview)</a></li><li role="none"><a aria-setsize="7" aria-level="3" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/operational-excellence/relocation-container-registry?toc=/azure/container-registry/toc.json&amp;bc=/azure/container-registry/breadcrumb/toc.json">Relocate to another region</a></li><li role="none"><a aria-setsize="7" aria-level="3" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-logs">View task logs</a></li></ul></li></ul></li><li class="tree-item is-expanded" aria-setsize="7" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Connected registry</span><ul class="tree-group" role="group"><li class="tree-item is-expanded" aria-setsize="5" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" id="title-4-1_1-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Overview</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/intro-connected-registry">About connected registry</a></li><li role="none"><a aria-setsize="2" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/overview-connected-registry-and-iot-edge">Use with IoT Edge</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="5" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" id="title-4-1_2-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Quickstarts</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="3" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/quickstart-connected-registry-cli">Create connected registry - CLI</a></li><li role="none"><a aria-setsize="3" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/quickstart-connected-registry-portal">Create connected registry - Portal</a></li><li role="none"><a aria-setsize="3" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/quickstart-deploy-connected-registry-iot-edge-cli">Deploy connected registry to IoT Edge</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="5" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" id="title-4-1_3-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tutorials</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/tutorial-deploy-connected-registry-nested-iot-edge-cli">Deploy connected registry to nested IoT Edge</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="5" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1_4-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Concepts</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/overview-connected-registry-access">Access to connected registry</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="5" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" id="title-4-1_5-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>How-to guides</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="1" aria-level="3" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/pull-images-from-connected-registry">Pull image from connected registry</a></li></ul></li></ul></li><li class="tree-item is-expanded" aria-setsize="7" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Reference</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/cli/azure/acr">Azure CLI</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/rest/api/containerregistry">REST</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/powershell/module/az.containerregistry">PowerShell</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/api/overview/azure/container-registry">.NET</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/python/api/overview/azure/container-registry">Python</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/java/api/overview/azure/containerregistry">Java</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/javascript/api/overview/azure/container-registry">Node.<wbr>js</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/templates/microsoft.containerregistry/registries">Resource Manager template</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-reference-yaml">Tasks YAML</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="10" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-webhook-reference">Webhook schema</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="11" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/event-grid/event-schema-container-registry?toc=/azure/container-registry/toc.json&amp;bc=/azure/container-registry/breadcrumb/toc.json">Event Grid schema</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="12" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-health-error-reference">Health check errors</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="13" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/policy-reference">Azure Policy built-ins</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="14" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/monitor-container-registry-reference">Monitoring data reference</a></li><li role="none"><a aria-setsize="15" aria-level="2" aria-posinset="15" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-service-tag">Service Tag</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="7" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Troubleshoot</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-troubleshoot-login">Troubleshoot login issues</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-troubleshoot-access">Troubleshoot network issues</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-troubleshoot-performance">Troubleshoot performance issues</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-check-health">Detect common issues</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-support-policies">Technical Support policies</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-faq">FAQ</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-api-deprecation">API Deprecation</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/troubleshoot-artifact-streaming">Troubleshoot Artifact streaming</a></li><li role="none"><a aria-setsize="9" aria-level="2" aria-posinset="9" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/azure/container-registry/troubleshoot-artifact-cache">Troubleshoot Artifact cache</a></li></ul></li><li class="tree-item is-expanded" aria-setsize="7" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" id="title-7-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Resources</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="6" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://azure.microsoft.com/regions/services/">Region availability</a></li><li role="none"><a aria-setsize="6" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://azure.microsoft.com/pricing/details/container-registry/">Pricing</a></li><li role="none"><a aria-setsize="6" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://aka.ms/acr/roadmap">Roadmap</a></li><li role="none"><a aria-setsize="6" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://feedback.azure.com/d365community/forum/180a533d-0d25-ec11-b6e6-000d3a4f0858">Provide product feedback</a></li><li role="none"><a aria-setsize="6" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://stackoverflow.com/questions/tagged/azure-container-registry">Stack Overflow</a></li><li role="none"><a aria-setsize="6" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://azure.microsoft.com/resources/videos/index/?services=container-registry&amp;sort=newest">Videos</a></li></ul></li></ul><div class="padding-xxs padding-none-tablet border-top border-bottom-tablet"><button class="button button-sm button-clear button-block inner-focus justify-content-flex-start-tablet" data-bi-name="download-pdf" rel="nofollow"><!---->
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-dictionary-download"></span>
+			</span>
+			<span><!---->Download PDF<!----></span>
+		<!----></button></div></nav>
+			</div><!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps "><div id="main-column" class="column  is-full is-11-desktop">
+
+						<main id="main" class="" role="main" data-bi-name="content" lang="en-us" dir="ltr"><!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet display-none-print">
+								<div class="display-flex align-items-center "><details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs" hidden="">
+										<summary class="button button-clear button-primary button-sm inner-focus" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"><!---->
+			<nav>
+				<ol class="list-style-none">
+					<!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/">
+										Learn
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/azure/">
+										Azure
+									</a>
+								</li>
+							<!----><!----><!---->
+				</ol>
+			</nav>
+			
+		<!----></div>
+									</details>
+
+									<bread-crumbs id="article-header-breadcrumbs" data-test-id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs" style="display: block; white-space: nowrap; overflow: hidden;"><!---->
+			<nav>
+				<ol class="breadcrumbs">
+					<!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/en-us/"><!---->Learn<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" style="">
+									<a href="https://learn.microsoft.com/en-us/azure/" style=""><!---->Azure<!----></a>
+								</li>
+							<!----><!----><!---->
+				</ol>
+			</nav>
+		<!----></bread-crumbs><div id="article-header-page-actions" class="margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"><a id="lang-link-tablet" class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" title="Read in English" data-bi-name="language-toggle" data-read-in-link="" hidden="" href="https://learn.microsoft.com/en-us/azure/container-registry/" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon="">
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text="">Read in English</span>
+										</a><a data-contenteditbtn="" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" aria-label="Edit" title="Edit This Document" data-bi-name="edit" href="https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/container-registry/index.yml" data-original_content_git_url="https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/articles/container-registry/index.yml" data-original_content_git_url_template="{repo}/blob/{branch}/articles/container-registry/index.yml" data-pr_repo="" data-pr_branch="">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions" title="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-xs"><button data-page-action-item="overflow-mobile" type="button" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" data-bi-name="contents-expand" data-contents-button="" data-popover-close="">
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span><span class="contents-expand-title">Table of contents</span></button><a id="lang-link-overflow" class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" title="Read in English" data-bi-name="language-toggle" data-page-action-item="overflow-mobile" data-check-hidden="true" data-read-in-link="" hidden="" href="https://learn.microsoft.com/en-us/azure/container-registry/" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+													<span class="icon" aria-hidden="true" data-read-in-link-icon="">
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text="">Read in English</span>
+												</a><a data-contenteditbtn="" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" aria-label="Edit" title="Edit This Document" data-bi-name="edit" href="https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/container-registry/index.yml" data-original_content_git_url="https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/articles/container-registry/index.yml" data-original_content_git_url_template="{repo}/blob/{branch}/articles/container-registry/index.yml" data-pr_repo="" data-pr_branch="">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a><div aria-hidden="true" class="margin-none" data-page-action-item="overflow-all"></div>
+														<hr class="display-none-tablet margin-bottom-xxs margin-top-xxs">
+														<h4 class="font-size-sm padding-left-xxs">Share via</h4>
+
+													<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fcontainer-registry%2F%3FWT.mc_id%3Dfacebook">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-facebook-share font-size-md color-primary"></span>
+															</span>
+															<span class="margin-left-xxs">Facebook</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fcontainer-registry%2F%3FWT.mc_id%3Dtwitter&amp;text=Today%20I%20completed%20%22Azure%20Container%20Registry%20documentation%20%7C%20Microsoft%20Learn%22!%20I'm%20so%20proud%20to%20be%20celebrating%20this%20achievement%20and%20hope%20this%20inspires%20you%20to%20start%20your%20own%20%40MicrosoftLearn%20journey!&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fcontainer-registry%2F%3FWT.mc_id%3Dtwitter">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-xlogo-share font-size-xxs"></span>
+															</span>
+															<span class="margin-left-xxs">x.com</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all" href="https://www.linkedin.com/feed/?shareActive=true&amp;text=Today%20I%20completed%20%22Azure%20Container%20Registry%20documentation%20%7C%20Microsoft%20Learn%22!%20I'm%20so%20proud%20to%20be%20celebrating%20this%20achievement%20and%20hope%20this%20inspires%20you%20to%20start%20your%20own%20%40MicrosoftLearn%20journey!%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fcontainer-registry%2F%3FWT.mc_id%3Dlinkedin">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-linked-in-logo font-size-sm color-primary"></span>
+															</span>
+															<span class="margin-left-xxs">LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start margin-bottom-xxs share-email" data-bi-name="email" data-page-action-item="overflow-all" href="mailto:?subject=%5BShared%20Article%5D%20Azure%20Container%20Registry%20documentation%20%7C%20Microsoft%20Learn&amp;body=Today%20I%20completed%20%22Azure%20Container%20Registry%20documentation%20%7C%20Microsoft%20Learn%22!%20I'm%20so%20proud%20to%20be%20celebrating%20this%20achievement%20and%20hope%20this%20inspires%20you%20to%20start%20your%20own%20%40MicrosoftLearn%20journey!%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fcontainer-registry%2F%3FWT.mc_id%3Demail">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message font-size-sm color-primary"></span>
+															</span>
+															<span class="margin-left-xxs">Email</span>
+														</a>
+											</div>
+										</details>
+										
+									</div></div>
+							</div>
+							<!-- end article-header --><div>
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button="" hidden="">
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span><span class="contents-expand-title">Table of contents</span></button>
+							</div><!-- end mobile-contents button  -->
+
+							<div class="content "><!-- <content> -->
+<section id="landing-head">
+	<div class="padding-top-xxs padding-bottom-xs">
+		<div class="columns">
+			<div class="column is-full">
+				<h1 class="font-size-h2">Azure Container Registry documentation</h1>
+					<p class="margin-top-xxs has-line-height-reset">Azure Container Registry allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments. Use Azure container registries with your existing container development and deployment pipelines. Use Azure Container Registry Tasks to build container images in Azure on-demand, or automate builds triggered by source code updates, updates to a container's base image, or timers.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="landing-content" class="padding-block-xs">
+	<div class="columns is-masonry is-three-masonry-columns" style="height: 1586px;">
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">About Azure Container Registry</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-overview" aria-hidden="true"></span>
+							Overview
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-intro" data-linktype="relative-path">What is Azure Container Registry?</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">Get started</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-quickstart" aria-hidden="true"></span>
+							Quickstart
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-get-started-azure-cli" data-linktype="relative-path">Create container registry - CLI</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-get-started-portal" data-linktype="relative-path">Create container registry - Portal</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-get-started-geo-replication-template" data-linktype="relative-path">Create container registry - ARM template</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-get-started-docker-cli" data-linktype="relative-path">Push and pull image with Docker</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-skus" data-linktype="relative-path">Azure Container Registry service tiers</a>
+							</li>
+						</ul>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-training" aria-hidden="true"></span>
+							Training
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="/en-us/training/modules/build-and-store-container-images/" data-linktype="absolute-path">Build and store container images with Azure Container Registry</a>
+							</li>
+						</ul>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-video" aria-hidden="true"></span>
+							video
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="https://azure.microsoft.com/resources/videos/index/?services=container-registry&amp;sort=newest" data-linktype="external">Azure Container Registry videos</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">Manage registries</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-quickstart" aria-hidden="true"></span>
+							Quickstart
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="quickstart-client-libraries" data-linktype="relative-path">Manage content with client libraries</a>
+							</li>
+						</ul>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-how-to-guide" aria-hidden="true"></span>
+							How-To Guide
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-repositories" data-linktype="relative-path">View repositories and tags</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-import-images" data-linktype="relative-path">Import images</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-image-lock" data-linktype="relative-path">Lock images</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-delete" data-linktype="relative-path">Delete images</a>
+							</li>
+						</ul>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-concept" aria-hidden="true"></span>
+							Concept
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-concepts" data-linktype="relative-path">Registries, repositories, and images</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-geo-replication" data-linktype="relative-path">Geo-replication</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-authentication" data-linktype="relative-path">Authentication</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-best-practices" data-linktype="relative-path">Best practices</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">What's new</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-how-to-guide" aria-hidden="true"></span>
+							How-To Guide
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-artifact-streaming" data-linktype="relative-path">Artifact Streaming</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-soft-delete-policy" data-linktype="relative-path">Soft delete policy</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">Tutorials</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-tutorial" aria-hidden="true"></span>
+							Tutorial
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-tutorial-prepare-registry" data-linktype="relative-path">Geo-replication</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-artifact-cache" data-linktype="relative-path">Artifact Cache</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">ACR Tasks</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-overview" aria-hidden="true"></span>
+							Overview
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-tasks-overview" data-linktype="relative-path">About ACR Tasks</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-tasks-multi-step" data-linktype="relative-path">Multi-step tasks</a>
+							</li>
+						</ul>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-quickstart" aria-hidden="true"></span>
+							Quickstart
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-quickstart-task-cli" data-linktype="relative-path">Build image in the cloud - CLI</a>
+							</li>
+						</ul>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-tutorial" aria-hidden="true"></span>
+							Tutorial
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-tutorial-quick-task" data-linktype="relative-path">Automate image builds</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">Troubleshoot guides</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-how-to-guide" aria-hidden="true"></span>
+							How-To Guide
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-troubleshoot-login" data-linktype="relative-path">Troubleshoot authentication issues</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-troubleshoot-access" data-linktype="relative-path">Troubleshoot network issues</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-troubleshoot-performance" data-linktype="relative-path">Troubleshoot performance issues</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-check-health" data-linktype="relative-path">Detect common issues</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">Reference</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-reference" aria-hidden="true"></span>
+							Reference
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-check-health" data-linktype="relative-path">ACR Technical Support policies</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-faq" data-linktype="relative-path">FAQ</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="policy-reference" data-linktype="relative-path">Azure Policy built-in</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-api-deprecation" data-linktype="relative-path">Deprecated APIs</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-service-tag" data-linktype="relative-path">Service Tags</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="column is-12 is-4-desktop">
+				<div class="box box-shadow-medium margin-none margin-xxs-desktop">
+					<h2 class="margin-none font-size-h6">Security</h2>
+						<h3 class="display-flex is-uppercase font-size-sm border-top margin-bottom-xxs margin-top-xs padding-top-xs has-text-subtle">
+							<span class="margin-right-xxs align-self-center font-size-h5 docon docon-topic-how-to-guide" aria-hidden="true"></span>
+							How-To Guide
+						</h3>
+						<ul class="margin-none has-line-height-reset">
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-manage-artifact" data-linktype="relative-path">Push and pull supply chain artifacts (Preview)</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-tutorial-sign-build-push" data-linktype="relative-path">Build, sign, and verify container images using Notary and Azure Key Vault (Preview)</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-private-link" data-linktype="relative-path">Connect to ACR with Azure Private Link</a>
+							</li>
+							<li class="is-unstyled padding-block-xxs">
+								<a class="has-external-link-indicator font-size-sm display-block" href="container-registry-configure-conditional-access" data-linktype="relative-path">Configure conditional access for ACR</a>
+							</li>
+						</ul>
+				</div>
+			</div>
+	</div>
+</section>
+</div><div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main><!-- recommendations section --><!-- end recommendations section -->
+
+						<!-- feedback section --><!-- end feedback section -->
+
+						<!-- feedback report section --><!-- end feedback report section --><div class="border-top is-visible-interactive has-default-focus margin-top-sm "><footer id="footer-interactive" data-bi-name="footer" class="footer-layout"><div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop"><a data-mscc-ic="false" class="locale-selector-link button button-sm button-clear flex-shrink-0" href="/en-us/locale?target=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fcontainer-registry%2F" data-bi-name="select-locale" aria-label="Content language selector. Currently set to English (United States).">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">English (United States)</span></a><div class="ccpa-privacy-link" data-ccpa-privacy-link="">
+<a href="https://aka.ms/yourcaliforniaprivacychoices" class="button button-sm button-clear flex-shrink-0" data-mscc-ic="false" data-bi-name="your-privacy-choices">
+	<svg role="img" aria-label="California Consumer Privacy Act (CCPA) Opt-Out Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" xml:space="preserve" height="16" width="43" focusable="false">
+		<title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>Your Privacy Choices</span>
+</a>
+
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>Light</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>Dark</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>High contrast</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">Trademarks</a></li><li>© Microsoft 2024</li>
+	</ul>
+</footer></div></div></div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm "><footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo"><div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop"><a data-mscc-ic="false" class="locale-selector-link button button-sm button-clear flex-shrink-0" href="/en-us/locale?target=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fcontainer-registry%2F" data-bi-name="select-locale" aria-label="Content language selector. Currently set to English (United States).">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">English (United States)</span></a><div class="ccpa-privacy-link" data-ccpa-privacy-link="">
+<a href="https://aka.ms/yourcaliforniaprivacychoices" class="button button-sm button-clear flex-shrink-0" data-mscc-ic="false" data-bi-name="your-privacy-choices">
+	<svg role="img" aria-label="California Consumer Privacy Act (CCPA) Opt-Out Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 14" xml:space="preserve" height="16" width="43" focusable="false">
+		<title>California Consumer Privacy Act (CCPA) Opt-Out Icon</title>
+		<path d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"></path>
+		<path d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"></path>
+		<path d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z" style="fill:#fff"></path>
+		<path d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z" style="fill:#06f"></path>
+	</svg>
+	<span>Your Privacy Choices</span>
+</a>
+
+		</div>
+		<div class="flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+		<span class="icon expanded-indicator" aria-hidden="true">
+			<span class="docon docon-chevron-down-light"></span>
+		</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light" aria-pressed="false">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>Light</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="dark" aria-pressed="true">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>Dark</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>High contrast</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li><li><a class="external-link-indicator" data-mscc-ic="false" href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/" data-bi-name="trademarks">Trademarks</a></li><li>© Microsoft 2024</li>
+	</ul>
+</footer>
+
+	</section><div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+
+</body></html>
