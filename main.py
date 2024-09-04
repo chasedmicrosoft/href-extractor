@@ -6,6 +6,30 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import csv
+import logging
+import os
+from datetime import datetime
+
+# Set up artifact directories
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+artifact_dir = "./artifacts"
+log_dir = os.path.join(artifact_dir, "logs")
+html_dir = os.path.join(artifact_dir, "html")
+csv_dir = os.path.join(artifact_dir, "csv")
+
+# Create directories if they do not exist
+os.makedirs(log_dir, exist_ok=True)
+os.makedirs(html_dir, exist_ok=True)
+os.makedirs(csv_dir, exist_ok=True)
+
+# Set up logging
+log_file = os.path.join(log_dir, f"{timestamp}.log")
+logging.basicConfig(
+    filename=log_file,
+    filemode='w',
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 def expand_all_elements(driver):
     while True:
@@ -17,7 +41,7 @@ def expand_all_elements(driver):
                 driver.execute_script("arguments[0].click();", element)
                 time.sleep(1)
             except Exception as e:
-                print(f"Error clicking element: {e}")
+                logging.error(f"Error clicking element: {e}")
                 continue
 
 def save_filtered_html(soup, filter_by_id=None, filter_by_class=None, filter_element=None):
@@ -25,26 +49,27 @@ def save_filtered_html(soup, filter_by_id=None, filter_by_class=None, filter_ele
     if filter_by_id:
         parent_element = soup.find(id=filter_by_id)
         if parent_element:
-            with open(f"filtered_content_{filter_by_id}.html", "w", encoding="utf-8") as file:
+            html_file = os.path.join(html_dir, f"filtered_content_{filter_by_id}_{timestamp}.html")
+            with open(html_file, "w", encoding="utf-8") as file:
                 file.write(str(parent_element))
             filtered_html_content = parent_element
-            print(f"Filtered HTML content saved to 'filtered_content_{filter_by_id}.html'.")
+            logging.info(f"Filtered HTML content saved to '{html_file}'.")
         else:
-            print(f"No element found with ID '{filter_by_id}'.")
+            logging.warning(f"No element found with ID '{filter_by_id}'.")
     elif filter_by_class and filter_element:
         parent_elements = soup.find_all(filter_element, class_=filter_by_class)
         if parent_elements:
             for i, parent_element in enumerate(parent_elements):
-                file_name = f"filtered_content_{filter_by_class}_{i+1}.html"
-                with open(file_name, "w", encoding="utf-8") as file:
+                html_file = os.path.join(html_dir, f"filtered_content_{filter_by_class}_{i+1}_{timestamp}.html")
+                with open(html_file, "w", encoding="utf-8") as file:
                     file.write(str(parent_element))
                 if i == 0:  # Save the first match for further processing
                     filtered_html_content = parent_element
-                print(f"Filtered HTML content saved to '{file_name}'.")
+                logging.info(f"Filtered HTML content saved to '{html_file}'.")
         else:
-            print(f"No elements found with class name '{filter_by_class}' and element '{filter_element}'.")
+            logging.warning(f"No elements found with class name '{filter_by_class}' and element '{filter_element}'.")
     else:
-        print("Please provide either an ID or both a class name and element type for filtering.")
+        logging.error("Please provide either an ID or both a class name and element type for filtering.")
     
     return filtered_html_content
 
@@ -58,9 +83,8 @@ def parse_html_and_generate_csv(soup, output_csv_file):
             breadcrumb_parts = []
             current_element = a_tag
             
-            # Debugging: Starting processing of <a> tag
-            print(f"Processing <a> tag with href: {href}")
-            input("Press Enter to continue...")
+            # Logging: Starting processing of <a> tag
+            logging.debug(f"Processing <a> tag with href: {href}")
 
             while current_element:
                 parent = current_element.find_parent(['li', 'ul'])
@@ -68,16 +92,14 @@ def parse_html_and_generate_csv(soup, output_csv_file):
                     span_text = parent.find('span', recursive=False)
                     if span_text and span_text.text.strip():
                         breadcrumb_parts.insert(0, span_text.text.strip())
-                        print(f"Added '{span_text.text.strip()}' to breadcrumb")
-                        input("Press Enter to continue...")
+                        logging.debug(f"Added '{span_text.text.strip()}' to breadcrumb")
                 current_element = parent
             
             breadcrumb = ' > '.join(breadcrumb_parts)
             writer.writerow([href, breadcrumb])
-            print(f"Final breadcrumb for href '{href}': {breadcrumb}\n")
-            input("Press Enter to continue...")
-    
-    print(f"CSV file '{output_csv_file}' has been generated.")
+            logging.debug(f"Final breadcrumb for href '{href}': {breadcrumb}")
+
+    logging.info(f"CSV file '{output_csv_file}' has been generated.")
 
 def main(url, filter_by_id=None, filter_by_class=None, filter_element=None):
     driver = webdriver.Chrome()
@@ -86,7 +108,7 @@ def main(url, filter_by_id=None, filter_by_class=None, filter_element=None):
     try:
         WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.TAG_NAME, 'body')))
     except Exception as e:
-        print(f"Error waiting for page to load: {e}")
+        logging.error(f"Error waiting for page to load: {e}")
         driver.quit()
         exit()
 
@@ -94,9 +116,11 @@ def main(url, filter_by_id=None, filter_by_class=None, filter_element=None):
     time.sleep(5)  # Ensure all content is loaded
     full_html = driver.page_source
 
-    with open("fully_expanded_content.html", "w", encoding="utf-8") as file:
+    # Save full HTML content
+    full_html_file = os.path.join(html_dir, f"fully_expanded_content_{timestamp}.html")
+    with open(full_html_file, "w", encoding="utf-8") as file:
         file.write(full_html)
-    print("Full page HTML content saved to 'fully_expanded_content.html'.")
+    logging.info(f"Full page HTML content saved to '{full_html_file}'.")
 
     soup = BeautifulSoup(full_html, "html.parser")
     
@@ -105,10 +129,11 @@ def main(url, filter_by_id=None, filter_by_class=None, filter_element=None):
 
     # Check if filtered HTML is found and parse
     if filtered_html:
-        print("Parsing filtered HTML to CSV...")
-        parse_html_and_generate_csv(filtered_html, "parsed_links_and_breadcrumbs.csv")
+        logging.info("Parsing filtered HTML to CSV...")
+        output_csv_file = os.path.join(csv_dir, f"parsed_links_and_breadcrumbs_{timestamp}.csv")
+        parse_html_and_generate_csv(filtered_html, output_csv_file)
     else:
-        print("Filtered HTML not found; skipping CSV generation.")
+        logging.warning("Filtered HTML not found; skipping CSV generation.")
 
     driver.quit()
 
@@ -122,7 +147,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if not args.id and (not args.class_name or not args.element):
-        print("Error: You must provide either an ID or both a class name and element type for filtering.")
+        logging.error("Error: You must provide either an ID or both a class name and element type for filtering.")
         exit()
 
     main(args.url, filter_by_id=args.id, filter_by_class=args.class_name, filter_element=args.element)
