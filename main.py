@@ -9,17 +9,21 @@ import csv
 import logging
 import os
 from datetime import datetime
+import sys
 
 # Set up artifact directories
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 artifact_dir = "./artifacts"
 log_dir = os.path.join(artifact_dir, "logs")
 html_dir = os.path.join(artifact_dir, "html")
+html_full_dir = os.path.join(html_dir, "full_html")
+html_filtered_dir = os.path.join(html_dir, "filtered_html")
 csv_dir = os.path.join(artifact_dir, "csv")
 
 # Create directories if they do not exist
 os.makedirs(log_dir, exist_ok=True)
-os.makedirs(html_dir, exist_ok=True)
+os.makedirs(html_full_dir, exist_ok=True)
+os.makedirs(html_filtered_dir, exist_ok=True)
 os.makedirs(csv_dir, exist_ok=True)
 
 # Set up logging
@@ -30,6 +34,11 @@ logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
+
+def log_command():
+    # Log the full command used to run the script
+    command = ' '.join(sys.argv)
+    logging.info(f"Command used to run the script: {command}")
 
 def expand_all_elements(driver):
     while True:
@@ -44,12 +53,12 @@ def expand_all_elements(driver):
                 logging.error(f"Error clicking element: {e}")
                 continue
 
-def save_filtered_html(soup, filter_by_id=None, filter_by_class=None, filter_element=None):
+def save_filtered_html(soup, filter_by_id=None, filter_by_class=None, filter_element=None, custom_attribute=None, custom_attribute_value=None):
     filtered_html_content = None
     if filter_by_id:
         parent_element = soup.find(id=filter_by_id)
         if parent_element:
-            html_file = os.path.join(html_dir, f"filtered_content_{filter_by_id}_{timestamp}.html")
+            html_file = os.path.join(html_filtered_dir, f"{timestamp}_filtered_content_{filter_by_id}.html")
             with open(html_file, "w", encoding="utf-8") as file:
                 file.write(str(parent_element))
             filtered_html_content = parent_element
@@ -60,7 +69,7 @@ def save_filtered_html(soup, filter_by_id=None, filter_by_class=None, filter_ele
         parent_elements = soup.find_all(filter_element, class_=filter_by_class)
         if parent_elements:
             for i, parent_element in enumerate(parent_elements):
-                html_file = os.path.join(html_dir, f"filtered_content_{filter_by_class}_{i+1}_{timestamp}.html")
+                html_file = os.path.join(html_filtered_dir, f"{timestamp}_filtered_content_{filter_by_class}_{i+1}.html")
                 with open(html_file, "w", encoding="utf-8") as file:
                     file.write(str(parent_element))
                 if i == 0:  # Save the first match for further processing
@@ -68,8 +77,20 @@ def save_filtered_html(soup, filter_by_id=None, filter_by_class=None, filter_ele
                 logging.info(f"Filtered HTML content saved to '{html_file}'.")
         else:
             logging.warning(f"No elements found with class name '{filter_by_class}' and element '{filter_element}'.")
+    elif custom_attribute and custom_attribute_value and filter_element:
+        parent_elements = soup.find_all(filter_element, {custom_attribute: custom_attribute_value})
+        if parent_elements:
+            for i, parent_element in enumerate(parent_elements):
+                html_file = os.path.join(html_filtered_dir, f"{timestamp}_filtered_content_{custom_attribute}_{custom_attribute_value}_{i+1}.html")
+                with open(html_file, "w", encoding="utf-8") as file:
+                    file.write(str(parent_element))
+                if i == 0:  # Save the first match for further processing
+                    filtered_html_content = parent_element
+                logging.info(f"Filtered HTML content saved to '{html_file}'.")
+        else:
+            logging.warning(f"No elements found with custom attribute '{custom_attribute}' and value '{custom_attribute_value}'.")
     else:
-        logging.error("Please provide either an ID or both a class name and element type for filtering.")
+        logging.error("Please provide either an ID, a class name and element type, or a custom attribute and value for filtering.")
     
     return filtered_html_content
 
@@ -101,7 +122,7 @@ def parse_html_and_generate_csv(soup, output_csv_file):
 
     logging.info(f"CSV file '{output_csv_file}' has been generated.")
 
-def main(url, filter_by_id=None, filter_by_class=None, filter_element=None):
+def main(url, filter_by_id=None, filter_by_class=None, filter_element=None, custom_attribute=None, custom_attribute_value=None):
     driver = webdriver.Chrome()
     driver.get(url)
     
@@ -117,7 +138,7 @@ def main(url, filter_by_id=None, filter_by_class=None, filter_element=None):
     full_html = driver.page_source
 
     # Save full HTML content
-    full_html_file = os.path.join(html_dir, f"fully_expanded_content_{timestamp}.html")
+    full_html_file = os.path.join(html_full_dir, f"{timestamp}_fully_expanded_content.html")
     with open(full_html_file, "w", encoding="utf-8") as file:
         file.write(full_html)
     logging.info(f"Full page HTML content saved to '{full_html_file}'.")
@@ -125,12 +146,12 @@ def main(url, filter_by_id=None, filter_by_class=None, filter_element=None):
     soup = BeautifulSoup(full_html, "html.parser")
     
     # Save filtered HTML based on user input
-    filtered_html = save_filtered_html(soup, filter_by_id, filter_by_class, filter_element)
+    filtered_html = save_filtered_html(soup, filter_by_id, filter_by_class, filter_element, custom_attribute, custom_attribute_value)
 
     # Check if filtered HTML is found and parse
     if filtered_html:
         logging.info("Parsing filtered HTML to CSV...")
-        output_csv_file = os.path.join(csv_dir, f"parsed_links_and_breadcrumbs_{timestamp}.csv")
+        output_csv_file = os.path.join(csv_dir, f"{timestamp}_parsed_links_and_breadcrumbs.csv")
         parse_html_and_generate_csv(filtered_html, output_csv_file)
     else:
         logging.warning("Filtered HTML not found; skipping CSV generation.")
@@ -143,11 +164,17 @@ if __name__ == "__main__":
     parser.add_argument("--id", type=str, help="The ID of the parent element to filter.")
     parser.add_argument("--class-name", type=str, help="The class name of the parent element to filter.")
     parser.add_argument("--element", type=str, help="The HTML element type to filter (e.g., 'ul', 'div').")
+    parser.add_argument("--custom-attribute", type=str, help="The custom attribute to filter by.")
+    parser.add_argument("--custom-attribute-value", type=str, help="The value of the custom attribute to filter by.")
 
     args = parser.parse_args()
 
-    if not args.id and (not args.class_name or not args.element):
-        logging.error("Error: You must provide either an ID or both a class name and element type for filtering.")
+    # Improved validation logic
+    if not args.id and not (args.class_name and args.element) and not (args.custom_attribute and args.custom_attribute_value):
+        logging.error("Error: You must provide either an ID, a class name and element type, or a custom attribute and its value for filtering.")
         exit()
 
-    main(args.url, filter_by_id=args.id, filter_by_class=args.class_name, filter_element=args.element)
+    # Log the command used to run the script
+    log_command()
+
+    main(args.url, filter_by_id=args.id, filter_by_class=args.class_name, filter_element=args.element, custom_attribute=args.custom_attribute, custom_attribute_value=args.custom_attribute_value)
