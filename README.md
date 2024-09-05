@@ -22,7 +22,7 @@ This tool is designed to scrape and parse HTML content from a webpage, expand al
 
 Ensure you have all required Python packages installed. You can install them using pip:
 
-`pip install selenium beautifulsoup4`
+`pip install -r requirements.txt`
 
 ### Running the Tool
 
@@ -43,7 +43,7 @@ To run the tool, use the following command:
 
 1. **Filter by Class Name and Element**:
 
-`python main.py --url "https://learn.microsoft.com/en-us/azure/container-registry/" --class-name 'tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1' --element "ul"`
+`python main.py --url "https://learn.microsoft.com/en-us/azure/container-registry/" --class-name 'tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1' --element "ul"` **NOTE:** You can test using this exact command
 
 2. **Filter by ID**:
 
@@ -85,7 +85,7 @@ If you encounter any issues, please check the log file in the `./artifacts/logs/
    - Double-check that dynamic elements are expanded before filtering.
 
 2. **WebDriver Errors**:
-   - Make sure ChromeDriver is installed and the path to ChromeDriver is correctly set in your system.
+   - Make sure ChromeDriver is installed and the path to ChromeDriver is correctly set in your system. This tool uses chrome browser when connecting via selenium.
 
 ## Future Enhancements
 
