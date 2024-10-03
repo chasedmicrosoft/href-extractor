@@ -97,16 +97,24 @@ def save_filtered_html(soup, filter_by_id=None, filter_by_class=None, filter_ele
 def parse_html_and_generate_csv(soup, output_csv_file):
     with open(output_csv_file, "w", newline='', encoding="utf-8") as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(["Href", "Breadcrumb"])
+        writer.writerow(["Title", "Href", "Breadcrumb"])
 
+        # Find all anchor tags with href attribute
         for a_tag in soup.find_all('a', href=True):
+
+            # Get the text of the anchor tag to be used as a title
+            title = a_tag.text.strip()
+            # Get the href of the achor tag
             href = a_tag['href']
+            # Get the breadcrumb of the anchor tag
             breadcrumb_parts = []
+            # Start from the current <a> tag
             current_element = a_tag
             
             # Logging: Starting processing of <a> tag
             logging.debug(f"Processing <a> tag with href: {href}")
 
+            # Find the parent <li> or <ul> element and its text
             while current_element:
                 parent = current_element.find_parent(['li', 'ul'])
                 if parent and parent.name == 'li':
@@ -117,8 +125,8 @@ def parse_html_and_generate_csv(soup, output_csv_file):
                 current_element = parent
             
             breadcrumb = ' > '.join(breadcrumb_parts)
-            writer.writerow([href, breadcrumb])
-            logging.debug(f"Final breadcrumb for href '{href}': {breadcrumb}")
+            writer.writerow([title, href, breadcrumb])
+            logging.debug(f"Final breadcrumb for achor tag titled '{title} with 'href '{href}': {breadcrumb}")
 
     logging.info(f"CSV file '{output_csv_file}' has been generated.")
 
