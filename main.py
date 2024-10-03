@@ -126,7 +126,7 @@ def parse_html_and_generate_csv(soup, output_csv_file):
             
             breadcrumb = ' > '.join(breadcrumb_parts)
             writer.writerow([title, href, breadcrumb])
-            logging.debug(f"Final breadcrumb for achor tag titled '{title} with 'href '{href}': {breadcrumb}")
+            logging.debug(f"Final breadcrumb for achor tag titled '{title}' with href '{href}': {breadcrumb}")
 
     logging.info(f"CSV file '{output_csv_file}' has been generated.")
 
